@@ -23,7 +23,7 @@ namespace API2.Controllers
             try 
             {
                 double juros = _jurosService.GetJuros();
-                var result = Math.Truncate(100 * _jurosService.CalculaJuros(valorinicial, juros, meses)) / 100;
+                var result = _jurosService.CalculaJuros(valorinicial, juros, meses);
                 return Ok(result);
             }
             catch(Exception ex)

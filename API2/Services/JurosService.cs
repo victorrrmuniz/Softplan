@@ -19,7 +19,7 @@ namespace API2.Services
 
         public double CalculaJuros(double valor, double juros, int tempo)
         {
-            return valor * Math.Pow((1 + juros), tempo);
+            return Math.Truncate(100 * valor * Math.Pow((1 + juros), tempo)) / 100;
         }
 
         public double GetJuros()
@@ -37,7 +37,7 @@ namespace API2.Services
 
         public string ShowMeTheCode()
         {
-            return "Teste";
+            return _urlsConfigurations.GitHub;
         }
     }
 }
